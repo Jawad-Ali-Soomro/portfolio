@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Times New Roman", Times, serif;
+  font-family: Forum;
 }
 
 .flex {
@@ -36,8 +36,9 @@
   }
   .menu-bars {
     gap: 5px;
+    cursor: pointer;
     .bar {
-      width: 50px;
+      width: 40px;
       height: 2px;
       background: black;
     }
@@ -53,13 +54,104 @@
       font-size: 20rem;
       text-transform: uppercase;
       line-height: 250px;
-      font-weight: 100;
+      font-weight: 50;
+      position: relative;
+      width: 100%;
     }
     h1:first-child {
       align-self: flex-start;
     }
+    h1:last-child::after {
+      content: "WEB DESIGNER AND DEVELOPER";
+      position: absolute;
+      font-size: 1.5rem;
+      line-height: 20px;
+      width: 100%;
+      left: -50px;
+      font-family: yatra one;
+      top: -50px;
+    }
     h1:last-child {
+      text-align: right;
       align-self: flex-end;
     }
+  }
+  .about {
+    margin-top: 30vh;
+    padding-bottom: 30vh;
+    width: 100%;
+    align-items: start;
+    .line {
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 20px;
+      width: 100%;
+      justify-content: space-between;
+      h1 {
+        font-weight: 100;
+        text-transform: uppercase;
+      }
+      h2 {
+        width: 160px;
+      }
+      button {
+        width: 150px;
+        background: transparent;
+        border: 1px solid;
+        text-transform: uppercase;
+        font-weight: 700;
+        height: 45px;
+        position: relative;
+      }
+      button::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 5px;
+        left: 5px;
+        border: 1px solid #80808090;
+        border-width: 0 1px 1px 0;
+        z-index: -1;
+        transition: 0.5s;
+      }
+    }
+    .heading {
+      margin-top: 100px;
+      font-size: 4rem;
+      max-width: 80%;
+      font-weight: 100;
+      text-align: justify;
+      text-align: left;
+    }
+
+    .main-highlights {
+      padding: 50px;
+      margin-top: 100px;
+      background: white;
+      overflow: hidden;
+      border-radius: 10px;
+      img {
+        border-radius: 10px;
+        width: 500px;
+        height: 300px;
+        animation: slide-in 1s linear infinite;
+      }
+
+      @keyframes slide-in {
+        from {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .highlights {
+    align-items: center;
+    justify-content: center;
   }
 }
