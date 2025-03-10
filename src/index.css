@@ -23,6 +23,7 @@
   position: fixed;
   left: 0;
   top: 0;
+  z-index: 1;
   .logo {
     gap: 10px;
     font-weight: 300;
@@ -37,11 +38,64 @@
   .menu-bars {
     gap: 5px;
     cursor: pointer;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
     .bar {
       width: 40px;
       height: 2px;
       background: black;
+      transition: 0.5s;
     }
+  }
+  .main-menu {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    transition: 0.5s;
+    top: 0;
+    left: 0;
+    background: #f8f6f1;
+    .nav-menu {
+      width: 100%;
+      a {
+        width: 80%;
+        text-decoration: none;
+        color: black;
+        text-transform: uppercase;
+        margin-top: 20px;
+        animation: animateLink 1s linear;
+        span {
+          font-size: 2rem;
+        }
+        font-size: 10rem;
+        justify-content: space-between;
+        font-weight: 300;
+        position: relative;
+      }
+      a:not(:last-child) {
+        padding-bottom: 20px;
+      }
+      a:not(:last-child)::after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        background: black;
+        position: absolute;
+        bottom: 0;
+        animation: animateNav 1s linear;
+      }
+    }
+  }
+}
+
+@keyframes animateNav {
+  from {
+    width: 50%;
+  }
+  to {
+    width: 100%;
   }
 }
 
@@ -57,6 +111,7 @@
       font-weight: 50;
       position: relative;
       width: 100%;
+      z-index: 0;
     }
     h1:first-child {
       align-self: flex-start;
@@ -133,8 +188,8 @@
       border-radius: 10px;
       img {
         border-radius: 10px;
-        width: 500px;
-        height: 300px;
+        width: 800px;
+        height: 500px;
         animation: slide-in 1s linear infinite;
       }
 
