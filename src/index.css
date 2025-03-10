@@ -14,6 +14,17 @@
   flex-direction: column;
 }
 
+.ball {
+  width: 30px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 200px;
+  transition: 0.3s;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  border-radius: 50%;
+}
 .header {
   padding-top: 20px;
   width: calc(100% - 200px);
@@ -22,7 +33,9 @@
   justify-content: space-between;
   position: fixed;
   left: 0;
+  padding-bottom: 20px;
   top: 0;
+  background: #f8f6f1;
   z-index: 1;
   .logo {
     gap: 10px;
@@ -38,7 +51,7 @@
   .menu-bars {
     gap: 5px;
     cursor: pointer;
-    z-index: 10;
+    z-index: 10000;
     width: 40px;
     height: 40px;
     overflow: hidden;
@@ -47,6 +60,7 @@
       height: 2px;
       background: black;
       transition: 0.5s;
+      z-index: 100;
     }
   }
   .main-menu {
@@ -58,14 +72,16 @@
     left: 0;
     background: #f8f6f1;
     .nav-menu {
-      width: 100%;
+      color: black;
+      width: 60%;
       a {
-        width: 80%;
+        width: 100%;
         text-decoration: none;
-        color: black;
+        color: inherit;
         text-transform: uppercase;
         margin-top: 20px;
         animation: animateLink 1s linear;
+        transition: 0.5s;
         span {
           font-size: 2rem;
         }
@@ -77,15 +93,30 @@
       a:not(:last-child) {
         padding-bottom: 20px;
       }
+      a:hover {
+        scale: 1.002;
+        color: black;
+        letter-spacing: 1px;
+      }
       a:not(:last-child)::after {
         content: "";
         width: 100%;
         height: 2px;
-        background: black;
+        background: rgba(0, 0, 0, 0.1);
         position: absolute;
         bottom: 0;
+        /* animation: animateNav 1s linear; */
+        transition: 0.5s;
+      }
+      a:not(:last-child):hover::after {
+        content: "";
+        transition: 0.5s;
+        background: black;
         animation: animateNav 1s linear;
       }
+    }
+    .nav-menu:hover {
+      color: rgba(0, 0, 0, 0.2);
     }
   }
 }
@@ -179,34 +210,146 @@
       text-align: justify;
       text-align: left;
     }
-
-    .main-highlights {
-      padding: 50px;
+    .projects {
+      width: 100%;
       margin-top: 100px;
-      background: white;
-      overflow: hidden;
-      border-radius: 10px;
-      img {
-        border-radius: 10px;
-        width: 800px;
-        height: 500px;
-        animation: slide-in 1s linear infinite;
+      li {
+        width: 100%;
+        justify-content: space-between;
+        font-size: 10rem;
+        position: relative;
+        text-transform: uppercase;
+        cursor: pointer;
+        position: relative;
+        span {
+          font-size: 2rem;
+        }
+        img {
+          position: absolute;
+          left: calc(50% - 250px);
+          z-index: 10;
+          width: 0;
+          z-index: 10;
+          animation: animateImg 3s ease-in-out;
+        }
       }
-
-      @keyframes slide-in {
-        from {
-          transform: translateX(100%);
-          opacity: 0;
+      li:hover {
+        img {
+          width: 500px;
         }
-        to {
-          transform: translateX(0);
-          opacity: 1;
-        }
+      }
+      li:not(:last-child) {
+        margin-bottom: 50px;
+      }
+      li:not(:last-child)::after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        background: #80808090;
+        position: absolute;
+        bottom: 0;
+        animation: animateNav 1s linear;
       }
     }
   }
   .highlights {
     align-items: center;
     justify-content: center;
+  }
+}
+
+@keyframes animateImg {
+  25% {
+    rotate: 45deg;
+  }
+  50% {
+    rotate: -45deg;
+  }
+  75% {
+    rotate: 45deg;
+  }
+}
+
+@media (max-width: 700px) {
+  .header {
+    width: calc(100% - 40px);
+    padding-left: 20px;
+    padding-right: 20px;
+    .main-menu {
+      .nav-menu {
+        width: 80%;
+        a {
+          font-size: 2.5rem;
+          span {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+  .main-container {
+    .top-container {
+      justify-content: center;
+      height: 80vh;
+      h1 {
+        font-size: 6rem !important;
+        line-height: 80px !important;
+      }
+      h1:last-child::after {
+        content: "WEB DESIGNER AND DEVELOPER";
+        position: absolute;
+        font-size: 1rem !important;
+        line-height: 20px;
+        width: 100%;
+        left: 0px !important;
+        font-family: yatra one;
+        top: -120px !important;
+      }
+    }
+    .about {
+      margin-bottom: 0 !important;
+      margin-top: 200px !important;
+      .line {
+        justify-content: space-between;
+        h1 {
+          margin-left: 30px;
+          font-size: 1rem;
+          text-align: right;
+        }
+        button {
+          width: 0;
+          height: 0;
+          overflow: hidden;
+        }
+      }
+      .heading {
+        max-width: 200%;
+        text-align: justify !important;
+        font-size: 2rem !important;
+      }
+      .projects {
+        li {
+          width: 100%;
+          font-size: 2rem;
+          z-index: 0;
+          img {
+            left: calc(50% - 150px);
+            z-index: 10000;
+          }
+        }
+        li:hover {
+          img {
+            width: 300px;
+          }
+        }
+      }
+    }
+    .highlights {
+      .line {
+        h1 {
+          margin-left: 90px;
+        }
+      }
+    }
   }
 }
