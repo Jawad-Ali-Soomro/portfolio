@@ -35,7 +35,7 @@
   left: 0;
   padding-bottom: 20px;
   top: 0;
-  background: #f8f6f1;
+  background: #ebe8e0;
   z-index: 1;
   .logo {
     gap: 10px;
@@ -70,7 +70,8 @@
     transition: 0.5s;
     top: 0;
     left: 0;
-    background: #f8f6f1;
+    background: #ebe8e0;
+    color: black;
 
     .links {
       position: absolute;
@@ -117,7 +118,7 @@
         content: "";
         width: 100%;
         height: 2px;
-        background: rgba(0, 0, 0, 0.1);
+        background: rgba(255, 255, 255, 0.1);
         position: absolute;
         bottom: 0;
         /* animation: animateNav 1s linear; */
@@ -163,16 +164,7 @@
     h1:first-child {
       align-self: flex-start;
     }
-    h1:last-child::after {
-      content: "WEB DESIGNER AND DEVELOPER";
-      position: absolute;
-      font-size: 1.5rem;
-      line-height: 20px;
-      width: 100%;
-      left: -50px;
-      font-family: yatra one;
-      top: -50px;
-    }
+  
     h1:last-child {
       text-align: right;
       align-self: flex-end;
@@ -203,6 +195,7 @@
         text-transform: uppercase;
         font-weight: 700;
         height: 45px;
+        color: black;
         position: relative;
       }
       button::after {
@@ -212,7 +205,7 @@
         height: 100%;
         top: 5px;
         left: 5px;
-        border: 1px solid #80808090;
+        border: 1px solid rgba(0, 0, 0, 0.5 );
         border-width: 0 1px 1px 0;
         z-index: -1;
         transition: 0.5s;
@@ -400,6 +393,10 @@
   .links-main {
     align-items: end;
     ul {
+      a {
+        text-decoration: none;
+        color: black;
+      }
       align-items: end;
     }
   }
@@ -423,7 +420,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: #f8f6f1;
+  background: white;
   z-index: 1000000;
   transition: 0.5s;
   font-size: 5rem;
@@ -494,11 +491,6 @@
           img {
             left: calc(50% - 150px);
             z-index: 10000;
-          }
-        }
-        li:hover {
-          img {
-            width: 300px;
           }
         }
       }
