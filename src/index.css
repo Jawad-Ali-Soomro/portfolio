@@ -555,6 +555,9 @@
 
 @media (max-width: 450px) {
   .header {
+    .logo {
+      font-size: 2rem;
+    }
     .main-menu {
       .links {
         width: calc(100% - 50px) !important;
