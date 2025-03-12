@@ -540,7 +540,7 @@
         .copy-text {
           span,
           a {
-            font-size: 0.6rem !important;
+            font-size: 1rem !important;
           }
         }
       }
