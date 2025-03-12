@@ -1,26 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Essential Meta Tags -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- SEO Title & Description -->
+    <title>Jawad Ali | MERN Stack Developer & Software Engineer</title>
+    <meta
+      name="description"
+      content="Jawad Ali is a skilled MERN Stack Developer, specializing in building high-performance web applications with expertise in React, Node.js, and modern UI/UX."
+    />
+    
+    <!-- Open Graph (OG) for Social Media -->
+    <meta property="og:title" content="Jawad Ali | MERN Stack Developer" />
+    <meta
+      property="og:description"
+      content="Discover the portfolio of Jawad Ali, a passionate software engineer and MERN stack developer crafting seamless digital experiences."
+    />
+    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:url" content="https://your-portfolio.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card for Better Social Sharing -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Jawad Ali | MERN Stack Developer" />
+    <meta
+      name="twitter:description"
+      content="Building modern, fast, and secure web applications. Explore my portfolio."
+    />
+    <meta name="twitter:image" content="/twitter-image.jpg" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Forum&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Yatra+One&display=swap"
-      rel="stylesheet"
-    />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <title>Vite + React</title>
+    <!-- Fonts (Preloading for Faster Loading) -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Exo:wght@100..900&family=Forum&family=Montserrat:wght@100..900&family=Oswald:wght@200..700&family=Yatra+One&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Exo:wght@100..900&family=Forum&family=Montserrat:wght@100..900&family=Oswald:wght@200..700&family=Yatra+One&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- AOS Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    
+    <!-- JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jawad Ali",
+        "jobTitle": "MERN Stack Developer",
+        "url": "https://your-portfolio.com",
+        "sameAs": [
+          "https://github.com/yourgithub",
+          "https://linkedin.com/in/yourlinkedin",
+          "https://twitter.com/yourtwitter"
+        ]
+      }
+    </script>
+
+    <!-- AOS Animations Script -->
+    <script async src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-  </body>
-  <script defer>
-    AOS.init();
-  </script>
-</html>
 
+    <!-- Initialize AOS -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        AOS.init();
+      });
+    </script>
+  </body>
+</html>
