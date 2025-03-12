@@ -66,11 +66,26 @@
   .main-menu {
     width: 100%;
     height: 100vh;
-    position: fixed;
+    position: absolute;
     transition: 0.5s;
     top: 0;
     left: 0;
     background: #f8f6f1;
+
+    .links {
+      position: absolute;
+      bottom: 50px;
+      width: calc(100% - 200px);
+      justify-content: space-between;
+      .copy-text {
+        font-size: 1.2rem;
+        color: black;
+        font-weight: 600;
+        a {
+          color: black;
+        }
+      }
+    }
     .nav-menu {
       color: black;
       width: 60%;
@@ -251,10 +266,132 @@
         animation: animateNav 1s linear;
       }
     }
+    .projects:hover {
+      color: rgba(0, 0, 0, 0.2);
+      li:hover {
+        transition: 0.5s;
+        letter-spacing: 1px;
+        color: black;
+        scale: 1.005;
+      }
+    }
   }
   .highlights {
     align-items: center;
     justify-content: center;
+  }
+}
+
+.about-me {
+  justify-content: start;
+  margin-top: 20vh;
+  width: 100%;
+  height: 120vh;
+  h1 {
+    justify-content: space-between;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #80808090;
+    width: 100%;
+  }
+  .container-about {
+    margin-top: 10vh;
+    align-items: start;
+    justify-content: start;
+    width: 100%;
+    /* justify-content: space-between !important; */
+    .left-container {
+      width: 80%;
+      h3 {
+        font-weight: 1rem !important;
+        text-transform: uppercase;
+        text-align: justify;
+        font-weight: 100;
+        color: rgba(0, 0, 0, 0.6);
+        span {
+          font-weight: 900;
+          color: black;
+        }
+      }
+    }
+    .right-container {
+      align-items: start;
+      justify-content: start;
+      height: 10vh;
+      width: 100%;
+      margin-left: 10vw;
+      h2 {
+        text-transform: uppercase;
+      }
+      .main-exp {
+        width: 100%;
+        padding: 20px;
+        border-left: 1px solid;
+        margin-top: 20px;
+        .card-exp {
+          justify-content: start;
+          align-items: start;
+          width: 100%;
+          height: 200px;
+          position: relative;
+          gap: 10px;
+          h3 {
+            text-transform: uppercase;
+          }
+          p {
+            text-transform: uppercase;
+            font-weight: 100;
+            max-width: 80%;
+            text-align: justify;
+          }
+        }
+        .card-exp::after {
+          content: "";
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          left: -30px;
+          background: black;
+          border-radius: 50%;
+          top: -0px;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  justify-content: start;
+  border-top: 1px solid;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  align-items: start;
+  justify-content: space-between;
+  .left-about {
+    max-width: 510px;
+    text-align: justify;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+  .services {
+    align-items: start;
+    h2 {
+      text-transform: uppercase;
+    }
+    ul {
+      text-transform: uppercase;
+      align-items: start;
+      margin-top: 10px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      list-style: none;
+    }
+  }
+  .links-main {
+    align-items: end;
+    ul {
+      align-items: end;
+    }
   }
 }
 
@@ -348,6 +485,84 @@
       .line {
         h1 {
           margin-left: 90px;
+        }
+      }
+    }
+  }
+  .about-me {
+    h1 {
+      width: 80%;
+      font-size: 1.5rem;
+    }
+    height: 200vh;
+    .container-about {
+      flex-direction: column;
+      .left-container {
+        width: 80%;
+        margin-left: 10%;
+      }
+      .right-container {
+        width: 80%;
+        margin-top: 200px;
+        margin-left: 10%;
+        .main-exp {
+          .card-exp {
+            height: 300px;
+            p {
+              max-width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    .left-about {
+      font-size: 0.9rem;
+      max-width: 300px;
+    }
+    .services {
+      max-width: 0;
+      overflow: hidden;
+    }
+    .links-main {
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .header {
+    .main-menu {
+      .links {
+        width: calc(100% - 100px);
+      }
+    }
+  }
+  .footer {
+    .left-about {
+      max-width: 100%;
+    }
+    .links-main,
+    .services {
+      overflow: hidden;
+      max-width: 0 !important;
+    }
+  }
+  .about-me {
+    height: 250vh;
+    .container-about {
+      .right-container {
+        .main-exp {
+          .card-exp {
+            height: 300px;
+            h3 {
+              font-size: 1rem;
+            }
+            p {
+              font-size: 0.8rem !important;
+            }
+          }
         }
       }
     }
