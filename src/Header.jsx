@@ -55,7 +55,9 @@ const Header = () => {
             </div>
           )}
           <div className="links flex">
-            <div className="copy-text flex">&copy; STUDIO DEVIOO 2025</div>
+            <div className="copy-text flex">
+              <span>&copy; STUDIO DEVIOO 2025</span>
+            </div>
             <div className="copy-text github-link flex">
               <a href="https://github.com/jawad-ali-soomro" target="_blank">
                 GITHUB

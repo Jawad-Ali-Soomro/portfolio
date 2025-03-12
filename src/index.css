@@ -535,7 +535,14 @@
   .header {
     .main-menu {
       .links {
-        width: calc(100% - 100px);
+        width: calc(100% - 50px) !important;
+        justify-content: space-between !important;
+        .copy-text {
+          span,
+          a {
+            font-size: 0.6rem !important;
+          }
+        }
       }
     }
   }
