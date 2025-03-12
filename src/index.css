@@ -579,8 +579,16 @@
     }
   }
   .about-me {
+    h1 {
+      font-size: 1.2rem;
+    }
     height: 250vh;
     .container-about {
+      .left-container {
+        h3 {
+          font-size: 0.9rem;
+        }
+      }
       .right-container {
         .main-exp {
           .card-exp {
