@@ -146,6 +146,7 @@
 }
 
 .main-container {
+  animation: animateMain 5s ease;
   .top-container {
     height: 93vh;
     width: 100%;
@@ -282,6 +283,15 @@
   }
 }
 
+@keyframes animateMain {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
 .about-me {
   justify-content: start;
   margin-top: 20vh;
@@ -405,6 +415,18 @@
   75% {
     rotate: 45deg;
   }
+}
+
+.loader-main {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #f8f6f1;
+  z-index: 1000000;
+  transition: 0.5s;
+  font-size: 5rem;
 }
 
 @media (max-width: 700px) {
@@ -573,5 +595,8 @@
         }
       }
     }
+  }
+  .loader-main {
+    font-size: 3rem;
   }
 }

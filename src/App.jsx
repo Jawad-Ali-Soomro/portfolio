@@ -10,6 +10,7 @@ import {
 import Footer from "./Footer";
 import Home from "./Home";
 import About from "./About";
+import Loader from "./Loader";
 function App() {
   window.addEventListener("mousemove", (e) => {
     const ball = document.querySelector(".ball");
@@ -22,6 +23,7 @@ function App() {
   return (
     <>
       <div className="ball"></div>
+      <Loader />
       <Header />
       <BrowserRouter>
         <Routes>
