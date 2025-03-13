@@ -451,16 +451,7 @@
         font-size: 6rem !important;
         line-height: 80px !important;
       }
-      h1:last-child::after {
-        content: "WEB DESIGNER AND DEVELOPER";
-        position: absolute;
-        font-size: 1rem !important;
-        line-height: 20px;
-        width: 100%;
-        left: 0px !important;
-        font-family: yatra one;
-        top: -120px !important;
-      }
+     
     }
     .about {
       margin-bottom: 0 !important;
